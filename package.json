@@ -1,0 +1,18 @@
+{
+  "name": "blaue-tonne-nbg",
+  "version": "1.0.0",
+  "description": "Abfuhrtermine der blauen Tonne als Kalender",
+  "scripts": {
+    "start": "parcel ./app/index.html -d public",
+    "build": "parcel build ./app/index.html -d public"
+  },
+  "keywords": [],
+  "author": "Sascha Ißbrücker",
+  "license": "MIT",
+  "dependencies": {
+    "preact": "^8.3.1"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.10.3"
+  }
+}

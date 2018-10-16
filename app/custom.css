@@ -1,0 +1,4 @@
+input[type=search] {
+    border: solid 1px #aaa;
+    width: 300px;
+}
