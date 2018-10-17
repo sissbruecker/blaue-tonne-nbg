@@ -3,16 +3,18 @@
   "version": "1.0.0",
   "description": "Abfuhrtermine der blauen Tonne als Kalender",
   "scripts": {
-    "start": "parcel ./app/index.html -d public",
+    "start": "parcel ./app/index.html -d tmp/build",
     "build": "parcel build ./app/index.html -d public"
   },
   "keywords": [],
   "author": "Sascha Ißbrücker",
   "license": "MIT",
   "dependencies": {
+    "milligram": "^1.3.0",
     "preact": "^8.3.1"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.10.3"
+    "parcel-bundler": "^1.10.3",
+    "sass": "^1.14.2"
   }
 }

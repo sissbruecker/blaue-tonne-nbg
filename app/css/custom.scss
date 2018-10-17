@@ -1,0 +1,28 @@
+nav.container {
+
+  padding-top: 10px;
+
+  h1 {
+    font-size: 2rem;
+    display: inline;
+  }
+
+  hr {
+    margin-top: 10px;
+  }
+}
+
+input[type=search] {
+  border: solid 1px #aaa;
+  width: 300px;
+}
+
+a.iconLink {
+
+  color: #606c76;
+
+  [class^="icon-"], [class*=" icon-"] {
+    color: cornflowerblue;
+    margin-right: 0.5rem;
+  }
+}
