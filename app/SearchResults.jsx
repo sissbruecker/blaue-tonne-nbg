@@ -1,13 +1,15 @@
 // noinspection ES6UnusedImports
 import { Component, h } from 'preact';
+import { CalendarFormat } from './CalendarFormat';
 
 export class SearchResults extends Component {
 
     render() {
 
-        const items = this.props.searchResults.map(renderResult);
+        const format = this.props.format;
+        const items = this.props.searchResults.map(result => renderResult(result, format));
 
-        return items.length > 0 && (
+        return (
             <table>
                 <thead>
                 <tr>
@@ -19,11 +21,11 @@ export class SearchResults extends Component {
                 {items}
                 </tbody>
             </table>
-        );
+        )
     }
 }
 
-function renderResult(result) {
+function renderResult(result, format) {
 
     const tourLinks = result.tours.map((tour, index) => (
         <span>
@@ -31,7 +33,7 @@ function renderResult(result) {
                 index !== 0 &&
                 <span> | </span>
             }
-            <a href={buildCalendarLink(tour)}>{tour.tour_name}</a>
+            <a href={buildCalendarLink(tour, format)}>{tour.tour_name}</a>
         </span>
     ));
 
@@ -43,7 +45,28 @@ function renderResult(result) {
     )
 }
 
-function buildCalendarLink(tour) {
+function buildCalendarLink(tour, format) {
+    switch (format) {
+        case CalendarFormat.CALENDAR_LINK:
+            return calendarWebLink(tour);
+        case CalendarFormat.CALENDAR_DOWNLOAD:
+            return calendarDownloadLink(tour);
+        case CalendarFormat.PDF_DOWNLOAD:
+            return pdfDownloadLink(tour);
+    }
+}
+
+function calendarWebLink(tour) {
     const l = window.location;
     return ['webcal:/', l.host, 'cal', `${tour.tour_id}.ics`].join('/')
+}
+
+function calendarDownloadLink(tour) {
+    const l = window.location;
+    return [l.protocol, '/', l.host, 'cal', `${tour.tour_id}.ics`].join('/')
+}
+
+function pdfDownloadLink(tour) {
+    const l = window.location;
+    return [l.protocol, '/', l.host, 'cal', `${tour.tour_id}.pdf`].join('/')
 }

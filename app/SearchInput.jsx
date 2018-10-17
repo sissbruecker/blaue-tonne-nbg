@@ -16,10 +16,13 @@ export class SearchInput extends Component {
 
     render() {
         return (
-            <input type='search'
-                   placeholder='Straßennamen eingeben...'
-                   value={this.props.searchText}
-                   onInput={this.handleInput}/>
+            <div className='search-input'>
+                <label>Suche</label>
+                <input type='search'
+                       placeholder='Straßennamen eingeben...'
+                       value={this.props.searchText}
+                       onInput={this.handleInput}/>
+            </div>
         );
     }
 }

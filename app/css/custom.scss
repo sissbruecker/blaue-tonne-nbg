@@ -17,7 +17,35 @@ input[type=search] {
   width: 300px;
 }
 
-a.iconLink {
+.form {
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  .search-input {
+    margin-right: 40px;
+  }
+
+  .format-selection {
+    flex: 1 1 0;
+  }
+
+  .button-bar {
+    white-space: nowrap;
+    button:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+
+  .help {
+    font-style: italic;
+    font-size: 1.3rem;
+    max-width: 100%;
+  }
+}
+
+a.with-icon {
 
   color: #606c76;
 
