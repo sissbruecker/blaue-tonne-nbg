@@ -5,8 +5,8 @@ button,
 input[type='button'],
 input[type='reset'],
 input[type='submit'] {
-    background-color: $highlight;
-    border: 0.1rem solid $highlight;
+  background-color: $highlight;
+  border: 0.1rem solid $highlight;
 }
 
 .button[disabled]:focus, .button[disabled]:hover,
@@ -18,8 +18,8 @@ input[type='reset'][disabled]:focus,
 input[type='reset'][disabled]:hover,
 input[type='submit'][disabled]:focus,
 input[type='submit'][disabled]:hover {
-    background-color: $highlight;
-    border-color: $highlight;
+  background-color: $highlight;
+  border-color: $highlight;
 }
 
 .button.button-outline,
@@ -27,7 +27,7 @@ button.button-outline,
 input[type='button'].button-outline,
 input[type='reset'].button-outline,
 input[type='submit'].button-outline {
-    color: $highlight;
+  color: $highlight;
 }
 
 .button.button-outline[disabled]:focus, .button.button-outline[disabled]:hover,
@@ -39,7 +39,7 @@ input[type='reset'].button-outline[disabled]:focus,
 input[type='reset'].button-outline[disabled]:hover,
 input[type='submit'].button-outline[disabled]:focus,
 input[type='submit'].button-outline[disabled]:hover {
-    color: $highlight;
+  color: $highlight;
 }
 
 .button.button-clear,
@@ -47,7 +47,7 @@ button.button-clear,
 input[type='button'].button-clear,
 input[type='reset'].button-clear,
 input[type='submit'].button-clear {
-    color: $highlight;
+  color: $highlight;
 }
 
 .button.button-clear[disabled]:focus, .button.button-clear[disabled]:hover,
@@ -59,11 +59,11 @@ input[type='reset'].button-clear[disabled]:focus,
 input[type='reset'].button-clear[disabled]:hover,
 input[type='submit'].button-clear[disabled]:focus,
 input[type='submit'].button-clear[disabled]:hover {
-    color: $highlight;
+  color: $highlight;
 }
 
 pre {
-    border-left: 0.3rem solid $highlight;
+  border-left: 0.3rem solid $highlight;
 }
 
 input[type='email']:focus,
@@ -75,9 +75,18 @@ input[type='text']:focus,
 input[type='url']:focus,
 textarea:focus,
 select:focus {
-    border-color: $highlight;
+  border-color: $highlight;
 }
 
 a {
-    color: $highlight;
+  color: $highlight;
+}
+
+.button:focus,
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus {
+  background-color: $highlight;
+  border-color: $highlight;
 }
