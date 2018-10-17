@@ -27,15 +27,18 @@ export class SearchResults extends Component {
 
 function renderResult(result, format) {
 
-    const tourLinks = result.tours.map((tour, index) => (
-        <span>
+    const tourLinks = result.tours
+        .concat()
+        .sort((left, right) => left.tour_name.localeCompare(right.tour_name))
+        .map((tour, index) => (
+            <span>
             {
                 index !== 0 &&
                 <span> | </span>
             }
-            <a href={buildCalendarLink(tour, format)}>{tour.tour_name}</a>
-        </span>
-    ));
+                <a href={buildCalendarLink(tour, format)}>{tour.tour_name}</a>
+            </span>
+        ));
 
     return (
         <tr>
