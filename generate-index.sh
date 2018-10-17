@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-python ./scraper/generate-index.py ./tmp/flat.json ./data/index.json
+python ./tools/generate-index.py ./tmp/flat.json ./data/index.json
