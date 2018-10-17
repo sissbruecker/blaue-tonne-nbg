@@ -59,7 +59,7 @@ function calendarWeblinkHelp() {
         <p className='help'>
             Per Klick auf den Link wird automatisch die Kalender-Applikation auf Ihrem PC geöffnet und bietet Ihnen an
             den Kalender
-            zu abonnieren. Klappt dies nicht, probieren Sie das Format <b>Kalender (Download)</b>.
+            zu abonnieren. Klappt dies nicht, probieren Sie <b>Kalender (Download)</b>.
         </p>
     )
 }
