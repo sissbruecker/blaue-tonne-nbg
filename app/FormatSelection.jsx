@@ -57,9 +57,8 @@ function showHelp(format) {
 function calendarWeblinkHelp() {
     return (
         <p className='help'>
-            Per Klick auf den Link wird automatisch die Kalender-Applikation auf Ihrem PC geöffnet und bietet Ihnen an
-            den Kalender
-            zu abonnieren. Klappt dies nicht, probieren Sie <b>Kalender (Download)</b>.
+            Per Klick auf den Link wird automatisch die Kalenderapplikation auf Ihrem PC geöffnet und bietet Ihnen an
+            den Kalender zu abonnieren. Klappt dies nicht, probieren Sie <b>Kalender (Download)</b>.
         </p>
     )
 }
@@ -67,8 +66,8 @@ function calendarWeblinkHelp() {
 function calendarDownloadHelp() {
     return (
         <p className='help'>
-            Der Kalender wird als .ics Datei heruntergeladen. Anschließend können Sie die Datei manuell in Ihre Kalender
-            Applikation importieren.
+            Der Kalender wird als .ics Datei heruntergeladen. Anschließend können Sie die Datei manuell in Ihre
+            Kalenderapplikation importieren.
         </p>
     )
 }
@@ -76,7 +75,7 @@ function calendarDownloadHelp() {
 function pdfDownloadHelp() {
     return (
         <p className='help'>
-            Sollten Sie über keine Kalender Applikation verfügen, können Sie den Kalender auch als PDF Datei
+            Sollten Sie über keine Kalenderapplikation verfügen, können Sie den Kalender auch als PDF Datei
             herunterladen und nach Wunsch ausdrucken.
         </p>
     )
