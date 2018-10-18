@@ -31,17 +31,31 @@ input[type=search] {
     flex: 1 1 0;
   }
 
-  .button-bar {
-    //white-space: nowrap;
-    button:not(:last-child) {
-      margin-right: 10px;
-    }
-  }
-
   .help {
     font-style: italic;
     font-size: 1.3rem;
     max-width: 100%;
+  }
+}
+
+ul.button-bar {
+  white-space: nowrap;
+  list-style-type: none;
+  margin: 0;
+
+  > li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  @media (max-width: 600px) {
+
+    display: inline-block;
+
+    > li {
+      display: block;
+      margin-right: 0;
+    }
   }
 }
 

@@ -18,11 +18,11 @@ export class FormatSelection extends Component {
         return (
             <div className='format-selection'>
                 <label>Format</label>
-                <div class='button-bar'>
+                <ul class='button-bar'>
                     {this.renderFormatButton('Kalender (Weblink)', CalendarFormat.CALENDAR_LINK)}
                     {this.renderFormatButton('Kalender (Download)', CalendarFormat.CALENDAR_DOWNLOAD)}
                     {this.renderFormatButton('PDF', CalendarFormat.PDF_DOWNLOAD)}
-                </div>
+                </ul>
                 <div>
                     {showHelp(this.props.selectedFormat)}
                 </div>
@@ -32,13 +32,14 @@ export class FormatSelection extends Component {
 
     renderFormatButton(title, format) {
         const styles = format === this.props.selectedFormat
-            ? ''
-            : 'button-outline';
+            ? 'button'
+            : 'button button-outline';
 
         return (
-            <button className={styles}
-                    data-format={format}
-                    onClick={this.handleSelect}>{title}</button>
+            <li className={styles}
+                        data-format={format}
+                        onClick={this.handleSelect}>{title}
+            </li>
         )
     }
 }
