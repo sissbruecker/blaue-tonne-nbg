@@ -7,7 +7,10 @@ export class SearchResults extends Component {
     render() {
 
         const format = this.props.format;
-        const items = this.props.searchResults.map(result => renderResult(result, format));
+        const items = this.props.searchResults
+            .concat()
+            .sort((left, right) => left.street_name.localeCompare(right.street_name))
+            .map(result => renderResult(result, format));
 
         return (
             <table>
