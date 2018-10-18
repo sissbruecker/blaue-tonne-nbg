@@ -17,8 +17,9 @@ export class SearchInput extends Component {
     render() {
         return (
             <div className='search-input'>
-                <label>Suche</label>
-                <input type='search'
+                <label for='input_search'>Suche</label>
+                <input id='input_search'
+                       type='search'
                        placeholder='Straßennamen eingeben...'
                        value={this.props.searchText}
                        onInput={this.handleInput}/>
