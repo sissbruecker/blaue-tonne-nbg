@@ -59,12 +59,26 @@ ul.button-bar {
   }
 }
 
-a.with-icon {
+a.nav-item {
 
   color: #606c76;
+  display: inline-block;
 
   [class^="icon-"], [class*=" icon-"] {
     color: cornflowerblue;
     margin-right: 0.5rem;
+  }
+
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
+}
+
+a.nav-item.yellow {
+  &.yellow {
+    [class^="icon-"], [class*=" icon-"] {
+      color: #edbc64;
+      margin-right: 0.5rem;
+    }
   }
 }
