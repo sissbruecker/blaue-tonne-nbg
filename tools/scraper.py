@@ -20,7 +20,7 @@ class CalendarSpider(scrapy.Spider):
             for tour_link in street_row.css('td a'):
                 tour_data = parse_tour_data(street_row, tour_link)
 
-                request = scrapy.Request(tour_data["tour_url"], self.parse_calendar)
+                request = scrapy.Request(tour_data["tour_url"], parse_calendar)
                 request.meta["tour_data"] = tour_data
 
                 yield request
@@ -29,20 +29,29 @@ class CalendarSpider(scrapy.Spider):
         if next_page is not None:
             yield response.follow(next_page, self.parse)
 
-    def parse_calendar(self, response):
 
-        data_table = response.css('table.contentpaneopen table.contentpaneopen table')
+def parse_year_events(year_table):
+    year_string = year_table.css('tr:first-child p font b::text').extract_first()
+    year = int(year_string)
 
-        year_string = data_table.css('tr:first-child p font b::text').extract_first()
-        year = int(year_string)
+    event_texts = year_table.css('tr:not(:first-child) td:nth-child(3) p font::text').extract()
+    events = [parse_event(text, year) for text in event_texts]
 
-        event_texts = data_table.css('tr:not(:first-child) td:nth-child(3) p font::text').extract()
-        events = [parse_event(text, year) for text in event_texts]
+    return events
 
-        calendar_data = dict(response.meta["tour_data"])
-        calendar_data["events"] = events
 
-        yield calendar_data
+def parse_calendar(response):
+
+    events = []
+    year_tables = response.css('table.contentpaneopen table.contentpaneopen table')
+
+    for year_table in year_tables:
+        events += parse_year_events(year_table)
+
+    calendar_data = dict(response.meta["tour_data"])
+    calendar_data["events"] = events
+
+    yield calendar_data
 
 
 def parse_tour_data(street_row, tour_link):
