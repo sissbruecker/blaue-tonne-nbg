@@ -37,8 +37,8 @@ export class FormatSelection extends Component {
 
         return (
             <li className={styles}
-                        data-format={format}
-                        onClick={this.handleSelect}>{title}
+                data-format={format}
+                onClick={this.handleSelect}>{title}
             </li>
         )
     }
@@ -58,8 +58,8 @@ function showHelp(format) {
 function calendarWeblinkHelp() {
     return (
         <p className='help'>
-            Per Klick auf den Link wird automatisch die Kalenderapplikation auf Ihrem PC geöffnet und bietet Ihnen an
-            den Kalender zu abonnieren. Klappt dies nicht, probieren Sie <b>Kalender (Download)</b>.
+            Per Klick auf den Link wird automatisch die Kalenderapplikation auf Ihrem PC oder Mobilgerät geöffnet und
+            bietet Ihnen an den Kalender zu abonnieren. Klappt dies nicht, probieren Sie <b>Kalender (Download)</b>.
         </p>
     )
 }
